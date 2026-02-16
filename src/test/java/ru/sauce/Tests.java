@@ -25,6 +25,6 @@ public class Tests extends BaseTests{
         $x("//div[@id='shopping_cart_container']").click();
         $$x("//div[@data-test='inventory-item']").shouldHave(size(1));
         $x("//div[@data-test='inventory-item-name']").shouldHave(text(productName));
-
+        //TODO work with PageObject
     }
 }
