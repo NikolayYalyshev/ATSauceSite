@@ -4,7 +4,7 @@ import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.stream.Stream;
 
-public class SauceDemoDataProvider {
+public class DataProvider {
 
     public static Stream<Arguments> providerGetRecourse(){
         return Stream.of(
