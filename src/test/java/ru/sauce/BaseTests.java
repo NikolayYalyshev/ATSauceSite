@@ -1,6 +1,8 @@
 package ru.sauce;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -11,6 +13,8 @@ public class BaseTests {
 
     @BeforeEach
     public void option() {
+        Configuration.timeout=6000;
+        Configuration.baseUrl="https://www.saucedemo.com";
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<>();
 
@@ -29,6 +33,12 @@ public class BaseTests {
 
         // Применяем настройки к Selenide
         Configuration.browserCapabilities = options;
+    }
+
+    @AfterEach
+    public void cleanUp() {
+        Selenide.clearBrowserCookies();
+        Selenide.clearBrowserLocalStorage();
     }
 
 }

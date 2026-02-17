@@ -4,12 +4,12 @@ import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.stream.Stream;
 
-public class DataProvider {
+public class SauceDemoDataProvider {
 
     public static Stream<Arguments> providerGetRecourse(){
         return Stream.of(
-                Arguments.of("standard_user","secret_sauce","Sauce Labs Backpack")
-//                Arguments.of("python","от 5000","Английский")
+                Arguments.of("standard_user","secret_sauce","Sauce Labs Backpack"),
+               Arguments.of("standard_user","secret_sauce","Sauce Labs Fleece Jacket")
         );
     }
 }
